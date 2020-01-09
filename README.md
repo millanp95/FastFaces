@@ -4,13 +4,14 @@ A Pytorch Implementation of a compressed Deep Learning Architecture using Low-Ra
 ## About
 The goal is to speed up and compress a network by eliminating redundancy in the 4D tensors that serve as convolutional kernels. The proposed tensor decomposition replaces the convolutional kernel with two consecutive kernels with lower rank as is shown in the figure. 
 
-<div id="banner">
-<div class="inline-block">
+<div id='topdiv1'>
+<div id="widget1" class="sticky1">
+<div id='topdiv3'>
 <img src ="Pictures\1.jpg">
 </div>
-
-<div class="inline-block">
+<div id='div23'>
 <img src ="Pictures\2.jpg">
+</div> 
 </div>
 </div>
 

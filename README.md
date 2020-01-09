@@ -31,7 +31,7 @@ Finally, the SVD decomposition of the matrix is computed and the product of the 
 ## Results. 
 
  <p align="center">
-  <img src="pictures\Detection.png">
+  <img src="Pictures\Detection.png">
 </p>
 
 The method was tested using the public the implementation of the Single Shot Multibox Detector (SSD) models provided by https://github.com/qfgaohao/pytorch-ssd. The method was tested  using a private dataset provided by the public transportation system in Bogotá Colombia with the aim of developing an efficient head count software. We were concerned about speedup and performance change for different layers. Performance change being relative to the baseline model with accuracy of 81.05 % and a total number of 6.601.011 parameters. The values in the weights reduction column represent the percentage of the original number of values in the particular layer that is used in the comprised model. 

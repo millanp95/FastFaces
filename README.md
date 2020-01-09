@@ -4,16 +4,10 @@ A Pytorch Implementation of a compressed Deep Learning Architecture using Low-Ra
 ## About
 The goal is to speed up and compress a network by eliminating redundancy in the 4D tensors that serve as convolutional kernels. The proposed tensor decomposition replaces the convolutional kernel with two consecutive kernels with lower rank as is shown in the figure. 
 
-<div id='topdiv1'>
-<div id="widget1" class="sticky1">
-<div id='topdiv3'>
-<img src ="Pictures\1.jpg">
-</div>
-<div id='div23'>
-<img src ="Pictures\2.jpg">
-</div> 
-</div>
-</div>
+<p float="left">
+  <img src ="Pictures\1.jpg">
+  <img src ="Pictures\2.jpg">
+</p>
 
 More specifically, if the convolutional layer have <a href="https://www.codecogs.com/eqnedit.php?latex=C" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C" title="C" /></a> inputs and <a href="https://www.codecogs.com/eqnedit.php?latex=N" target="_blank"><img src="https://latex.codecogs.com/gif.latex?N" title="N" /></a> outputs, the main objective is to find two intermediate kernels <a href="https://www.codecogs.com/eqnedit.php?latex=$\mathcal{H}&space;\in&space;\mathbb{R}^{C&space;\times&space;d&space;\times&space;1&space;\times&space;K}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$\mathcal{H}&space;\in&space;\mathbb{R}^{C&space;\times&space;d&space;\times&space;1&space;\times&space;K}$" title="$\mathcal{H} \in \mathbb{R}^{C \times d \times 1 \times K}$" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{V}\in&space;\mathbb{R}^{K&space;\times&space;d&space;\times&space;1&space;\times&space;N}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{V}\in&space;\mathbb{R}^{K&space;\times&space;d&space;\times&space;1&space;\times&space;N}" title="\mathcal{V}\in \mathbb{R}^{K \times d \times 1 \times N}" /></a> such that <a href="https://www.codecogs.com/eqnedit.php?latex=K&space;<&space;N" target="_blank"><img src="https://latex.codecogs.com/gif.latex?K&space;<&space;N" title="K < N" /></a>, constraining the rank of the layer to be <a href="https://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="https://latex.codecogs.com/gif.latex?K" title="K" /></a>.
 

@@ -32,7 +32,7 @@ def Tau(w):
         for j_2 in range(N*d):
             i_1 = j_1 // d ; i_2=j_1 % d;
             i_4 = j_2 // d ; i_3=j_2 % d;
-            W[j_1][j_2]=w[i_4,i_1,i_2,i_3]
+            W[j_1][j_2] = w[i_4,i_1,i_2,i_3]
 
     return W
 
@@ -63,8 +63,8 @@ def Tau_inv(W,K,d):
 timer = Timer()
 
 #pretrained Model
-model_path='models/BaseModel.pth'
-k=4
+model_path = 'models/BaseModel.pth'
+k = 4  #Rank
 
 #Create the network using the architectures.
 net = create_mobilenetv1_ssd(2, is_test=True)
@@ -109,7 +109,7 @@ net_copy.load_state_dict(params)
 predictor = create_shrinked_mobilenetv1_ssd_predictor(net_copy, candidate_size=200)
 #predictor = create_mobilenetv1_ssd_predictor(net, candidate_size=200)
 
-r=pd.read_csv('Data_model_TM1/open_images/sub-test-annotations-bbox.csv')
+r = pd.read_csv('Data_model_TM1/open_images/sub-test-annotations-bbox.csv') #Change this line according to yor Dataset
 
 for image_id, g in r.groupby('ImageID'):
 
@@ -127,7 +127,7 @@ for image_id, g in r.groupby('ImageID'):
 
     image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    #Make the prediction using the original model
+    #Make the prediction using the new model
     timer.start()
     boxes, labels, probs = predictor.predict(image, 10, 0.6)
     interval = timer.end()
@@ -146,7 +146,7 @@ for image_id, g in r.groupby('ImageID'):
                         (255, 0, 255),
                         2)
 
-    cv2.imshow('predictions_original',img)
+    cv2.imshow('predictions',img)
 
     cv2.waitKey(0)
 
@@ -155,6 +155,6 @@ for image_id, g in r.groupby('ImageID'):
 net_copy.load_state_dict(params)
 
 
-#Print the parametersin the new module
+#Print the parameters in the new model
 for layer in net_copy.state_dict().keys():
     print(layer,net_copy.state_dict()[layer].shape)

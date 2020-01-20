@@ -1,9 +1,9 @@
 #This Script will:
 #1. Load a model and for a given layer, maps the tensor to a matrix
-#2. Computes de SVD of the Layer.
-#3. Uses the SVD to build the Low-Rank Approximation.
-#4. Computes the Low-rank Factorization of the layer.
-#5. Maps it back to the network and makes a prediction.
+#2. Compute de SVD of the Layer.
+#3. Use the SVD to build the Low-Rank Approximation.
+#4. Compute the Low-rank Factorization of the layer.
+#5. Map it back to the network and make a prediction.
 
 
 from vision.ssd.mobilenetv1_ssd import create_mobilenetv1_ssd, create_mobilenetv1_ssd_predictor
